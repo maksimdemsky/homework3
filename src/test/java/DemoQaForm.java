@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Configuration;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -11,19 +12,21 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class DemoQaForm {
 
+
+    Faker faker = new Faker();
     String
-            firstName = "Maksim",
-            lastName = "Demsky",
-            userEmail = "maksimdemsky@gmail.com",
-            mobile = "7777777777",
+            firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            userEmail = faker.internet().emailAddress(),
+            mobile = faker.number().digits(10),
+            address = faker.address().fullAddress(),
             birth = "07 March,1997",
             hobby1 = "Sports",
             hobby2 = "Music",
-            address = "Minsk, Belarus",
             state = "NCR",
             city = "Delhi",
             stateAndCity = "NCR Delhi",
-            fullName = "Maksim Demsky",
+            fullName = firstName + " " + lastName,
             hobbies = "Sports, Music",
             acceptFormText = "Thanks for submitting the form",
             sex = "Male",
