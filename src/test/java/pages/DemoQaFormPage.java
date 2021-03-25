@@ -1,16 +1,12 @@
-import com.codeborne.selenide.Configuration;
+package pages;
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class DemoQaForm {
+public class DemoQaFormPage {
 
 
     Faker faker = new Faker();
@@ -33,7 +29,8 @@ public class DemoQaForm {
             subject = "Physics";
 
 
-    public void openDemoQaSite() {
+    public void openDemoQaSite()
+    {
         open("https://demoqa.com/automation-practice-form");
     }
 
@@ -47,10 +44,8 @@ public class DemoQaForm {
         $(byText(sex)).click();
         $("#userNumber").setValue(mobile);
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").click();
-        $(byText("March")).click();
-        $(".react-datepicker__year-select").click();
-        $(byText("1997")).click();
+        $(".react-datepicker__month-select").selectOption("March");
+        $(".react-datepicker__year-select").selectOption("1997");
         $(".react-datepicker__month").$(byText("7")).click();
         $("#subjectsInput").setValue(subject).pressEnter();
         $("#hobbiesWrapper").$(byText(hobby1)).click();
