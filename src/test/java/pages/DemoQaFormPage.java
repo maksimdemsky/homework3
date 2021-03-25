@@ -50,7 +50,7 @@ public class DemoQaFormPage {
         $("#subjectsInput").setValue(subject).pressEnter();
         $("#hobbiesWrapper").$(byText(hobby1)).click();
         $("#hobbiesWrapper").$(byText(hobby2)).click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/123.jpg"));
+        $("#uploadPicture").uploadFromClasspath("123.jpg");
         $("#currentAddress").setValue(address);
         $("#stateCity-wrapper").$(byText("Select State")).click();
         $(byText(state)).click();
