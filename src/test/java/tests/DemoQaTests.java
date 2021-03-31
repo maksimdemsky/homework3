@@ -1,11 +1,11 @@
 package tests;
+
 import org.junit.jupiter.api.Test;
 import pages.DemoQaFormPage;
 
 
 public class DemoQaTests extends TestBase {
     DemoQaFormPage DemoQaFormPage;
-
 
     @Test
     void pageObjectDemoQa() {
@@ -14,8 +14,6 @@ public class DemoQaTests extends TestBase {
         DemoQaFormPage.openDemoQaSite();
         DemoQaFormPage.fillTestForm();
         DemoQaFormPage.checkForm();
-
-
 
 
     }

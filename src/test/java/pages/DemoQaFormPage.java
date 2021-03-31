@@ -29,15 +29,11 @@ public class DemoQaFormPage {
             subject = "Physics";
 
 
-    public void openDemoQaSite()
-    {
+    public void openDemoQaSite() {
         open("https://demoqa.com/automation-practice-form");
     }
 
-
     public void fillTestForm() {
-
-
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
